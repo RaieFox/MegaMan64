@@ -1,0 +1,9 @@
+baserom.us.z64
+megaman64.l
+megaman64.ld
+*.d
+asm
+bin
+build
+tools/undefined_syms_auto.txt
+tools/undefined_funcs_auto.txt

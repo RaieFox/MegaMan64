@@ -1,0 +1,478 @@
+name: Mega Man 64 (North America)
+sha1: f24fe0aff01aec018e2dd558ec4f076cf328129f
+options:
+  basename: megaman64
+  target_path: baserom.us.z64
+  elf_path: build/megaman64.elf
+  base_path: .
+  platform: n64
+  compiler: GCC
+  o_as_suffix: yes
+  do_c_func_detection: yes
+  generated_c_preamble: |
+    #include <include_asm.h>
+  # asm_path: asm
+  # src_path: src
+  asset_path: bin
+  # build_path: build
+  # create_asm_dependencies: True
+
+  ld_script_path: megaman64.ld
+  ld_dependencies: True
+
+  find_file_boundaries: True
+  header_encoding: ASCII
+
+  use_legacy_include_asm: False
+  mips_abi_float_regs: o32
+
+  asm_function_macro: glabel
+  asm_jtbl_label_macro: jlabel
+  asm_data_macro: dlabel
+  
+  #New Fields
+  #migrate_rodata_to_functions: true
+  #auto_all_sections: []
+  #find_file_boundaries: no
+  #do_c_func_detection: yes
+  #section_order:
+  #- .text
+  #- .data
+  #- .rodata
+  #- .bss
+
+  # section_order: [".text", ".data", ".rodata", ".bss"]
+
+  symbol_addrs_path:
+    - megaman.sym.txt
+  reloc_addrs_path:
+    - reloc_addrs.txt
+
+  # undefined_funcs_auto_path: undefined_funcs_auto.txt
+  # undefined_syms_auto_path: undefined_syms_auto.txt
+
+  extensions_path: tools/splat_ext
+
+  # string_encoding: ASCII
+  # data_string_encoding: ASCII
+  rodata_string_guesser_level: 3
+  data_string_guesser_level: 0
+  # libultra_symbols: True
+  # hardware_regs: True
+  # gfx_ucode: # one of [f3d, f3db, f3dex, f3dexb, f3dex2]
+  gfx_ucode: f3dex2
+segments:
+  - name: header
+    type: header
+    start: 0x00
+
+  - name: boot
+    type: bin
+    start: 0x40
+
+  - name: main
+    find_file_boundaries: false
+    type: code
+    start: 0x1000
+    vram: 0x80025C00
+    subalign: 16
+    #bss_size: 0x14A500
+    subsegments:
+      - [0x1000, hasm, entry]
+      - [0x01060, asm, codeseg1/code_1]
+      - [0x01500, asm, codeseg1/code_2]
+      - [0x01D30, asm, codeseg1/code_3]
+    #  - [0x02950, asm, codeseg1/code_4] # Merge for RODATA AD060
+    #  - [0x03FF0, asm, codeseg1/code_5] # Merge for RODATA AD060
+    #  - [0x04130, asm, codeseg1/code_6] # Merge for RODATA AD060
+    #  - [0x04240, asm, codeseg1/code_7] # Merge for RODATA AD060
+    #  - [0x04800, asm, codeseg1/code_8] # Merge for RODATA AD060
+    #  - [0x048F0, asm, codeseg1/code_9] # Merge for RODATA AD060
+    #  - [0x05B10, asm, codeseg1/code_10]# Merge for RODATA AD060
+      - [0x07470, asm, codeseg1/code_11]
+      - [0x07820, asm, codeseg1/code_12]
+      - [0x07AF0, asm, codeseg1/code_13]
+      - [0x07ED0, asm, codeseg1/code_14]
+      - [0x0A190, asm, codeseg1/code_15]
+      - [0x0B130, asm, codeseg1/code_16]
+      - [0x0DCE0, asm, codeseg1/code_17]
+      - [0x0DD20, asm, codeseg1/code_18]
+      - [0x0E3C0, asm, codeseg1/code_19]
+      - [0x108D0, asm, codeseg1/code_20]
+      - [0x11F90, asm, codeseg1/code_21]
+      - [0x12240, asm, codeseg1/code_22]
+      - [0x12F70, asm, codeseg1/code_23]
+    #  - [0x13180, asm, codeseg1/code_24] # Merge for RODATA AD1F0
+    #  - [0x13950, asm, codeseg1/code_25] # Merge for RODATA AD1F0
+      - [0x153E0, asm, codeseg1/code_26]
+      - [0x17100, asm, codeseg1/code_27]
+      - [0x17230, asm, codeseg1/code_28] 
+    #  - [0x19A40, asm, codeseg1/code_29] # Merge for RODATA AD210
+    #  - [0x22660, asm, codeseg1/code_30] # Merge for RODATA AD210
+    #  - [0x24010, asm, codeseg1/code_31] # Merge for RODATA AD210
+    #  - [0x271D0, asm, codeseg1/code_32] # Merge for RODATA AD210
+    #  - [0x273B0, asm, codeseg1/code_33] # Merge for RODATA AD210
+    #  - [0x27900, asm, codeseg1/code_34] # Merge for RODATA AD210
+    #  - [0x2B4C0, asm, codeseg1/code_35] # Merge for RODATA AD210
+    #  - [0x2CEF0, asm, codeseg1/code_36] # Merge for RODATA AD210
+      - [0x30550, asm, codeseg1/code_37] 
+    #  - [0x30C10, asm, codeseg1/code_37_1]
+    #  - [0x33EF0, asm, codeseg1/code_38]
+    #  - [0x34720, asm, codeseg1/code_39]
+      - [0x38060, asm, codeseg1/code_40]
+    #  - [0x39F40, asm, codeseg1/code_41]
+      - [0x3A950, asm, codeseg1/code_42]
+      - [0x3B5D0, asm, codeseg1/code_43]
+      - [0x3C780, asm, codeseg1/code_44]
+      - [0x44C60, asm, codeseg1/code_45]
+    #  - [0x4B830, asm, codeseg1/code_46]
+      - [0x4BBB0, asm, codeseg1/code_46_1]
+      - [0x4C280, asm, codeseg1/code_47]
+      - [0x4C3C0, asm, codeseg1/code_48]
+      - [0x4CE10, asm, codeseg1/code_49]
+      - [0x4E200, asm, codeseg1/code_50]
+      - [0x4F2E0, asm, codeseg1/code_51]
+      - [0x4F380, asm, codeseg1/code_52]
+      - [0x509C0, asm, codeseg1/code_53]
+      - [0x52280, asm, codeseg1/code_54]
+    #  - [0x52820, asm, codeseg1/code_55] # Merge for RODATA ADFD0
+      - [0x53270, asm, codeseg1/code_56]
+      - [0x533B0, asm, codeseg1/code_57]
+      - [0x538C0, asm, codeseg1/code_58]
+      - [0x55780, asm, codeseg1/code_59]
+      - [0x560D0, asm, codeseg1/code_60]
+      - [0x56640, asm, codeseg1/code_61]
+      - [0x568B0, asm, codeseg1/code_62]
+      - [0x56BD0, asm, codeseg1/code_63]
+      - [0x572A0, asm, codeseg1/code_64]
+      - [0x5C780, asm, codeseg1/code_65]
+      - [0x5F230, asm, codeseg1/code_66]
+      - [0x600F0, asm, codeseg1/code_67]
+      - [0x60DB0, asm, codeseg1/code_68]
+      - [0x615E0, asm, codeseg1/code_69]
+      - [0x61890, asm, codeseg1/code_70]
+      - [0x62970, asm, codeseg1/code_71]
+      - [0x62FC0, asm, codeseg1/code_72]
+      - [0x646B0, asm, codeseg1/code_73]
+      - [0x650D0, asm, codeseg1/code_74]
+      #LibMus
+      - [0x652A0, asm, codeseg1/code_75]
+      - [0x65510, asm, codeseg1/code_76]
+      - [0x65790, asm, codeseg1/code_77]
+      - [0x657D0, asm, codeseg1/code_78] 
+    #  - [0x666E0, asm, MusFxBankNumberOfEffects]
+    #  - [0x676F0, asm, MusIntInitSweep]
+      - [0x698A0, asm, codeseg1/code_79]
+      - [0x69D00, asm, codeseg1/code_80]
+      - [0x69EB0, asm, codeseg1/code_81]
+      - [0x6A170, asm, codeseg1/code_82]
+      #End of LibMus
+      - [0x6A3E0, asm, codeseg1/code_83]
+    #  - [0x6A9A0, asm, n_alEnvmixerPull
+      - [0x6B370, asm, codeseg1/code_84]
+      - [0x6BA90, asm, codeseg1/code_85]
+      - [0x6BC70, asm, codeseg1/code_86]
+    #  - [0x6C170, asm, n_loadOutputBuffer]
+      - [0x6C660, asm, n_alInit]
+      - [0x6C6E0, asm, codeseg1/code_88]
+      - [0x6C730, asm, codeseg1/code_89]
+      - [0x6C910, asm, codeseg1/code_90]
+      - [0x6C9C0, asm, codeseg1/code_91]
+      - [0x6CA50, asm, codeseg1/code_92]
+      - [0x6CAE0, asm, codeseg1/code_93]
+      - [0x6CB90, asm, codeseg1/code_94]
+      - [0x6CC20, asm, codeseg1/code_95]
+      - [0x6CCA0, asm, codeseg1/code_96]
+      - [0x6D200, asm, codeseg1/code_97]
+      - [0x6D250, asm, codeseg1/code_98]
+      - [0x6D320, asm, codeseg1/code_99]
+      - [0x6DC60, asm, codeseg1/code_100]
+      - [0x6DCA0, asm, codeseg1/code_101]
+      - [0x6DDD0, asm, codeseg1/code_102]
+      - [0x6E210, asm, codeseg1/code_103]
+      - [0x6E250, asm, codeseg1/code_104]
+      - [0x6E290, asm, codeseg1/code_105]
+      - [0x6E2B0, asm, codeseg1/code_106]
+      - [0x6E2D0, asm, codeseg1/code_107]
+      - [0x6E350, asm, codeseg1/code_108]
+      - [0x6E460, asm, codeseg1/code_109]
+      - [0x6E490, asm, codeseg1/code_110]
+      - [0x6E4C0, asm, codeseg1/code_111]
+      - [0x6E540, asm, codeseg1/code_112]
+      - [0x6E5F0, asm, codeseg1/code_113]
+      - [0x6E860, asm, codeseg1/code_114]
+      - [0x6EE20, asm, codeseg1/code_115]
+      - [0x6EFB0, asm, codeseg1/code_116]
+      - [0x6F320, asm, codeseg1/code_117]
+      - [0x6F440, asm, codeseg1/code_118]
+      - [0x6F7E0, asm, codeseg1/code_119]
+      - [0x6F840, asm, codeseg1/code_120]
+    #  - [0x6F860, asm, SetIntMask] # Manual Split
+    #  - [0x6F900, asm, CreatePiManager] # Manual Split
+    #  - [0x6FA90, asm, EPiRawStartDma] # Manual Split
+      - [0x6FC80, asm, osEPiStartDma]
+      - [0x6FD20, asm, osCartRomInit]
+      - [0x6FEA0, asm, __osDevMgrMain]
+      - [0x70260, asm, __osPiCreateAccessQueue]
+    #  - [0x70320, asm, PiRelAccess] # Manual Split
+      - [0x70350, asm, osPiStartDma]
+      - [0x70400, asm, osFlashInit]
+    #  - [0x70510, asm, FlashReadId] # Manual Split
+      - [0x70610, asm, osFlashAllErase]
+    #  - [0x70750, asm, FlashSectorErase] # Manual Split
+      - [0x708A0, asm, osFlashWriteBuffer]
+      - [0x70940, asm, osFlashWriteArray]
+    #  - [0x70A90, asm, FlashReadArray] # Manual Split
+      - [0x70C40, asm, osAiGetLength]
+    #  - [0x70C50, asm, AiGetStatus] # Manual Split
+    #  - [0x70C60, asm, AiSetFrequency] # Manual Split
+      - [0x70D80, asm, osAiSetNextBuffer]
+      - [0x70E20, asm, init_lpfilter]  
+      - [0x71650, asm, alAdpcmPull] 
+    #  - [0x71E30, asm, alLoadParam] # Manual Split
+      - [0x72160, asm, alAuxBusPull] 
+      - [0x72270, asm, alEnvmixerPull] 
+    #  - [0x72770, asm, alEnvmixerParam] # Manual Split
+    #  - [0x72F20, asm, alFilterNew] # Manual Split
+      - [0x72F40, asm, alMainBusPull] 
+    #  - [0x73080, asm, alMainBusParam] # Manual Split
+    #  - [0x730B0, asm, alResamplePull] # Manual Split
+      - [0x73360, asm, alFxPull] 
+    #  - [0x73F00, asm, alSavePull] #Merge for RODATA AE520
+    #  - [0x73FD0, asm, alInit] #Merge for RODATA AE520
+    #  - [0x74080, asm, alHeapInit] #Merge for RODATA AE520
+    #  - [0x740C0, asm, alHeapDBAlloc] #Merge for RODATA AE520
+    #  - [0x74110, asm, alCopy] #Merge for RODATA AE520
+    #  - [0x74150, asm, alSynNew] #Merge for RODATA AE520
+      - [0x74790, asm, alSynDelete] 
+      - [0x747A0, asm, alSynAllocFX] 
+      - [0x74840, asm, osInvalDCache] 
+    #  - [0x748F0, asm, osInvalICache] # Manual Split
+      - [0x74970, asm, osWritebackDCache] 
+      - [0x749F0, asm, osWritebackDCacheAll] 
+      - [0x74A20, asm, osContStartQuery] 
+    #  - [0x74AA0, asm, osContGetQuery] # Manual Split
+    #  - [0x74AC0, asm, osContStartReadData] # Manual Split
+      - [0x74CA0, asm, osContInit] 
+      - [0x74FB0, asm, osVirtualToPhysical] 
+      - [0x75010, asm, __cosf]
+      - [0x75190, asm, __sinf]
+      - [0x75390, asm, _bcopy]
+      - [0x756B0, asm, _bzero]
+      - [0x757E0, asm, sprintf]
+      - [0x75870, asm, osCreateMesgQueue]
+      - [0x758A0, asm, osJamMesg]
+      - [0x759E0, asm, osRecvMesg]
+      - [0x75B10, asm, osSendMesg]
+      - [0x75CF0, asm, osSpTaskLoad]
+      - [0x75F30, asm, osSpTaskYield]
+      - [0x75F50, asm, osSpTaskYielded]
+      - [0x75FA0, asm, osCreateScheduler]
+      - [0x76A60, asm, __osSiCreateAccessQueue]
+      - [0x76B50, asm, osCreateThread]
+      - [0x76D00, asm, osGetThreadPri]
+      - [0x76D20, asm, osSetThreadPri]
+      - [0x76DF0, asm, osStartThread]
+      - [0x76F10, asm, osStopThread]
+      - [0x76FD0, asm, __osDequeueThread]
+      - [0x77010, asm, osYieldThread]
+      - [0x77060, asm, osGetTime]
+      - [0x770F0, asm, osSetTimer]
+      - [0x77220, asm, __osTimerServicesInit]
+      - [0x77540, asm, __osProbeTLB]
+      - [0x77600, asm, osUnmapTLBAll]
+      - [0x77650, asm, osViGetCurrentFramebuffer]
+      - [0x77690, asm, osViGetNextFramebuffer]
+      - [0x776D0, asm, osCreateViManager]
+      - [0x77A10, asm, osViSetEvent]
+      - [0x77A70, asm, osViSetMode]
+      - [0x77AC0, asm, osViSetSpecialFeatures]
+      - [0x77C30, asm, osViSetYScale]
+      - [0x77C80, asm, osViSwapBuffer]
+      - [0x77CD0, asm, __osViSwapContext]
+      - [0x77FE0, asm, osViBlack]
+      - [0x78040, asm, guMtxIdent]
+      - [0x780A0, asm, guMtxIdentF]
+      - [0x78100, asm, guMtxF2L]
+      - [0x78180, asm, __osMotorAccess]
+      - [0x78510, asm, osPfsAllocateFile]
+      - [0x78940, asm, osPfsDeleteFile]
+      - [0x78B60, asm, osPfsReadWriteFile]
+      - [0x79140, asm, osPfsFindFile]
+      - [0x79300, asm, osPfsFreeBlocks]
+      - [0x79410, asm, osPfsNumFiles]
+      - [0x797E0, asm, osPfsRepairId]
+      - [0x79840, asm, __osPfsGetStatus]
+      - [0x79A50, asm, __osPfsSelectBank]
+      - [0x79AC0, asm, __osSumcalc]
+      - [0x7A550, asm, __osContRamRead]
+      - [0x7A740, asm, __osContRamWrite]
+      - [0x7A9B0, asm, osAfterPreNMI]
+      - [0x7A9D0, asm, createSpeedParam]
+      - [0x7AD70, asm, __osExceptionPreamble]
+      - [0x7B6E0, asm, __osDisableInt]
+      - [0x7B770, asm, __osSetGlobalIntMask]
+      - [0x7B800, asm, osPiRawStartDma]
+      - [0x7BA60, asm, osEPiRawWriteIo]
+      - [0x7BBD0, asm, osEPiWriteIo]
+      - [0x7BC30, asm, osEPiReadIo]
+      - [0x7BC90, asm, osEPiLinkHandle]
+      - [0x7BCE0, asm, __osFlashGetAddr]
+      - [0x7BD00, asm, osFlashReadStatus]
+      - [0x7BDA0, asm, osFlashClearStatus]
+      - [0x7BE00, asm, __osAiDeviceBusy]
+      - [0x7BE20, asm, _bcmp]
+      - [0x7CA20, asm, __osGetCause]
+      - [0x7CA30, asm, osGetCount]
+      - [0x7CA40, asm, __osGetSR]
+      - [0x7CA50, asm, __osSetCompare]
+      - [0x7CA60, asm, __osSetFpcCsr]
+    #  - [0x7CA70, asm, osSetSR] #Manual Split
+    #  - [0x7CA80, asm, osSetWatchLo] #Manual Split
+    #  - [0x7CA90, asm, osSpDeviceBusy] #Manual Split
+      - [0x7CAB0, asm, __osSpGetStatus]
+    #  - [0x7CAC0, asm, osSpSetStatus] #Manual Split
+    #  - [0x7CAD0, asm, osSpSetPc] #Manual Split
+    #  - [0x7CB00, asm, osSpRawStartDma] #Manual Split
+      - [0x7CB90, asm, __osSiRawReadIo]
+      - [0x7CBE0, asm, __osSiRawWriteIo]
+      - [0x7CC30, asm, __osContAddressCrc]
+      - [0x7CD20, asm, osMapTLBRdb]
+      - [0x7CD80, asm, __osViInit]
+      - [0x7CE90, asm, __osViGetCurrentContext]
+      - [0x7CEA0, asm, osPfsChecker]
+    #  - [0x7D5C0, asm, osPfsIsPlug] #Manual Split
+      - [0x7D8A0, asm, _Litob]
+      - [0x7DAF0, asm, _Ldtob]
+      - [0x7E580, asm, __osDpDeviceBusy]
+      - [0x7E5A0, asm, __osSiDeviceBusy]
+      - [0x7E5C0, asm, ldiv]
+      - [0x7E780, asm, codeseg1/code_235]
+      - [0x7E850, asm, codeseg1/code_236]
+      - [0x7E9A0, asm, codeseg1/code_237]
+    #  - [0x7EC70, asm, __divdi3]
+     # - [0x7EDE0, asm, __udivdi3]
+     # - [0x7EE00, asm, __umoddi3]
+      - [0x7EE40, bin, rspboot_code]
+      - [0x7EF10, bin, n_aspMain_code]
+      - [0x7FB70, bin, f3dex2]
+      - [0x80F00, bin, l3dex2]
+    #   ##### DATA START ####
+    #  - [0x82090, data, all_data]
+      - [0x82090, data, codeseg1/code_1]
+    #  - [0x820B0, bin, f3dex2_data]
+      - [0x82340, data, codeseg1/code_11]
+    #  - [0x83C10, data, codeseg1/code_15]
+    #  - [0x83C60, data, codeseg1/code_16]
+    #  - [0x841A0, data, codeseg1/code_19]
+    #  - [0x87B50, data, codeseg1/code_20]
+    #  - [0x87CF0, data, codeseg1/code_22]
+    #  - [0x87D50, data, codeseg1/code_23]
+    #  - [0x87D60, data, codeseg1/code_25]
+    #  - [0x87D80, data, codeseg1/code_26]
+    #  - [0x87DE0, data, codeseg1/code_28]
+    #  - [0x87E10, data, codeseg1/code_29]
+    #  - [0x87EB0, data, codeseg1/code_31]
+    #  - [0x89950, data, codeseg1/code_37]
+    #  - [0x89D30, data, codeseg1/code_39]
+    #  - [0x8A050, data, codeseg1/code_40]
+    #  - [0x8B8D4, data, codeseg1/code_42]
+    #  - [0x8B8F0, data, codeseg1/code_43]
+    #  - [0x8BB50, data, codeseg1/code_44]
+    #  - [0x98680, data, codeseg1/code_60]
+    #  - [0x98690, data, codeseg1/code_61]
+    #  - [0x986E0, data, codeseg1/code_62]
+    #  - [0x986F0, data, codeseg1/code_63]
+    #  - [0x98740, data, codeseg1/code_64]
+    #  - [0x99370, data, codeseg1/code_65]
+    #  - [0xA1670, data, codeseg1/code_66]
+    #  - [0xA9C50, data, codeseg1/code_67]
+    #  - [0xA9D20, data, codeseg1/code_69]
+    #  - [0xA9DA0, data, codeseg1/code_70]
+    #  - [0xA9E00, data, codeseg1/code_71]
+    #  - [0xA9E30, data, codeseg1/code_72]
+    #  - [0xA9F30, data, codeseg1/code_75]
+    #  - [0xA9F50, data, codeseg1/code_76]
+    #  - [0xA9F70, data, MusStartSong]
+    #  - [0xAA030, data, Fchangefx]
+    #  - [0xAA240, data, codeseg1/code_81]
+    #  - [0xAA270, data, codeseg1/code_83]
+    #  - [0xAA270, data, n_alFxNew]
+    #  - [0xAA400, data, n_alEnvmixerPull]
+    #  - [0xAA510, data, codeseg1/code_95]
+    #  - [0xAA520, data, codeseg1/code_99]
+    #  - [0xAA540, data, codeseg1/code_101]
+    #  - [0xAA550, data, codeseg1/code_102]
+    #  - [0xAA570, data, codeseg1/code_113]
+    #  - [0xAA5B0, data, codeseg1/code_114]
+    #  - [0xAA5E0, data, codeseg1/code_116]
+    #  - [0xAA5F0, data, codeseg1/code_118]
+    #  - [0xAA620, data, CreatePiManager]
+      - [0xAA650, data, osCartRomInit]
+      - [0xAA670, data, osAiSetNextBuffer]
+      - [0xAA770, data, init_lpfilter]
+      - [0xAA810, data, alEnvmixerPull]
+      - [0xAA940, data, osContInit]
+      - [0xAA950, data, __sinf]
+      - [0xAB150, data, osSendMesg]
+      - [0xAB160, data, osCreateScheduler]
+      - [0xAB170, data, __osSiCreateAccessQueue]
+      - [0xAB180, data, osCreateMesgQueue]
+      - [0xAB190, data, osJamMesg]
+      - [0xAB1A0, data, osSetTimer]
+      - [0xAB1B0, data, osCreateViManager]
+    #  #Gap?
+      - [0xAC350, data, __osSumcalc]
+      - [0xAC360, data, __osContRamRead]
+      - [0xAC370, data, createSpeedParam]
+      - [0xAC410, data, __osViInit]
+      - [0xAC570, data, _Litob]
+    #  - [0xAC5A0, bin, F3DEX] # RSP Gfx ucode F3DEX
+    #  - [0xAC9D0, bin, RSP_F3DEX_ucode]
+    #  - [0xACDF0, bin, RSP_L3DEX_ucode]
+      ##### RODATA START ####
+      - [0xAD060, rodata, codeseg1/code_3] 
+      - [0xAD110, rodata, codeseg1/code_11]
+      - [0xAD150, rodata, codeseg1/code_19]
+      - [0xAD190, rodata, codeseg1/code_22]
+      - [0xAD1F0, rodata, codeseg1/code_23]
+      - [0xAD210, rodata, codeseg1/code_28]
+      - [0xAD840, rodata, codeseg1/code_37]
+      - [0xADB00, rodata, codeseg1/code_40]
+      - [0xADBF0, rodata, codeseg1/code_45]
+      - [0xADDB0, rodata, codeseg1/code_46_1]
+      - [0xADDE0, rodata, codeseg1/code_50]
+      - [0xADF40, rodata, codeseg1/code_53]
+      - [0xADFD0, rodata, codeseg1/code_54]
+      - [0xAE030, rodata, codeseg1/code_59]
+      - [0xAE070, rodata, codeseg1/code_64]
+      - [0xAE0A0, rodata, codeseg1/code_67]
+      - [0xAE110, rodata, codeseg1/code_78]
+      - [0xAE200, rodata, codeseg1/code_83]
+      - [0xAE2A0, rodata, codeseg1/code_85]
+      - [0xAE2B0, rodata, codeseg1/code_86]
+      - [0xAE2F0, rodata, codeseg1/code_96]
+      - [0xAE390, rodata, __osDevMgrMain]
+      - [0xAE3B0, rodata, osAiGetLength]
+    #  - [0xAE3C0, rodata, osAiSetNextBuffer]
+      - [0xAE3C0, rodata, init_lpfilter]
+      - [0xAE400, rodata, alEnvmixerPull]
+      - [0xAE4F0, rodata, alMainBusPull]
+      - [0xAE520, rodata, alFxPull]
+      - [0xAE590, rodata, __cosf]
+      - [0xAE5F0, rodata, __sinf]
+      - [0xAE650, rodata, osCreateScheduler]
+      - [0xAE670, rodata, __osViSwapContext]
+      - [0xAE680, rodata, __osExceptionPreamble]
+      - [0xAE6D0, rodata, libm] # Calls from COSF and SINF
+      - [0xAE6E0, rodata, _bcmp]
+      - [0xAE860, rodata, _Ldtob]
+      - { start: 0xAE8D0, type: bss, vram: 0x800D34D0 }
+    
+  - name: bin
+    type: bin
+    start: 0xAE8D0
+    vram: 0x800D34D0
+    subsegments:
+      - [0xAE8D0, bin]
+  - [0x2000000]
