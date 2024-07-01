@@ -462,11 +462,11 @@ segments:
     type: code
     exclusive_ram_id: overlay1
     start: 0xAE8D0
-    vram: 0x8021D9D0 # Refer to 800269b4
+    vram: 0x8021D9D0
     subsegments:
-      - [0xAE8D0, asm, ovl1/code_1]
-      - [0xAEA90, asm, ovl1/code_2]
-      - [0xAED70, bin]
+      - [0xAE8D0, asm, ovl1/code_1] # 800D34D0
+      - [0xAEA90, asm, ovl1/code_2] # 800D3690
+      - [0xAED70, bin]              # 800D3970
     
   - name: ovl2
     overlay: True
@@ -475,15 +475,15 @@ segments:
     start: 0xB6040
     vram: 0x80225150
     subsegments:
-      - [0xB6040, asm, ovl2/code_1 ] # 800dac40
-      - [0xB6F20, asm, ovl2/code_2 ] # 800DBB20
-      - [0xB7610, asm, ovl2/code_3 ] # 800DC210
-      - [0xB9EB0, asm, ovl2/code_4 ] # 800DEAB0
-      - [0xBB620, asm, ovl2/code_5 ] # 800E0220
-      - [0xBBB40, asm, ovl2/code_6 ] # 800E0740
-      - [0xBC820, asm, ovl2/code_7 ] # 800E1420
-      - [0xBF340, asm, ovl2/code_8 ] # 800E3F40
-      - [0xC0FD0, asm, ovl2/code_9 ] # 800E5BD0
+      - [0xB6040, asm, ovl2/code_1]  # 800DAC40
+      - [0xB6F20, asm, ovl2/code_2]  # 800DBB20
+      - [0xB7610, asm, ovl2/code_3]  # 800DC210
+      - [0xB9EB0, asm, ovl2/code_4]  # 800DEAB0
+      - [0xBB620, asm, ovl2/code_5]  # 800E0220
+      - [0xBBB40, asm, ovl2/code_6]  # 800E0740
+      - [0xBC820, asm, ovl2/code_7]  # 800E1420
+      - [0xBF340, asm, ovl2/code_8]  # 800E3F40
+      - [0xC0FD0, asm, ovl2/code_9]  # 800E5BD0
       - [0xC2B10, asm, ovl2/code_10] # 800E7710
       - [0xC30D0, asm, ovl2/code_11] # 800E7CD0
       - [0xC42A0, asm, ovl2/code_12] # 800E8EA0
@@ -505,7 +505,7 @@ segments:
       - [0xCC900, asm, ovl2/code_28] # 800F1500
       - [0xCCE70, asm, ovl2/code_29] # 800F1A70
       - [0xCCEE0, asm, ovl2/code_30] # 800F1AE0
-      - [0xCD420, bin] # 800F2020
+      - [0xCD420, bin]               # 800F2020
       
   - name: ovl3
     overlay: True
@@ -514,15 +514,15 @@ segments:
     start: 0xD0F50
     vram: 0x80225150
     subsegments:
-      - [0xD0F50, asm, ovl3/code_1 ] # 800F5B50
-      - [0xD1D00, asm, ovl3/code_2 ] # 800F6900
-      - [0xD2AD0, asm, ovl3/code_3 ] # 800F76D0
-      - [0xD30F0, asm, ovl3/code_4 ] # 800F7CF0
-      - [0xD36D0, asm, ovl3/code_5 ] # 800F82D0
-      - [0xD3CC0, asm, ovl3/code_6 ] # 800F88C0
-      - [0xD4C20, asm, ovl3/code_7 ] # 800F9820
-      - [0xD72D0, asm, ovl3/code_8 ] # 800FBED0
-      - [0xD7490, asm, ovl3/code_9 ] # 800FC090
+      - [0xD0F50, asm, ovl3/code_1]  # 800F5B50
+      - [0xD1D00, asm, ovl3/code_2]  # 800F6900
+      - [0xD2AD0, asm, ovl3/code_3]  # 800F76D0
+      - [0xD30F0, asm, ovl3/code_4]  # 800F7CF0
+      - [0xD36D0, asm, ovl3/code_5]  # 800F82D0
+      - [0xD3CC0, asm, ovl3/code_6]  # 800F88C0
+      - [0xD4C20, asm, ovl3/code_7]  # 800F9820
+      - [0xD72D0, asm, ovl3/code_8]  # 800FBED0
+      - [0xD7490, asm, ovl3/code_9]  # 800FC090
       - [0xD9B50, asm, ovl3/code_10] # 800FE750
       - [0xDABD0, asm, ovl3/code_11] # 800FF7D0
       - [0xDAE60, asm, ovl3/code_12] # 800FFA60
@@ -544,7 +544,7 @@ segments:
       - [0xE6B20, asm, ovl3/code_28] # 8010B720
       - [0xE6F80, asm, ovl3/code_29] # 8010BB80
       - [0xE71D0, asm, ovl3/code_30] # 8010BDD0
-      - [0xE7AC0, bin] # 8010C6C0
+      - [0xE7AC0, bin]               # 8010C6C0
       
   - name: ovl4
     overlay: True
@@ -553,7 +553,7 @@ segments:
     start: 0xEB4D0
     vram: 0x80225150
     subsegments:
-      - [0x0EB4D0, asm, ovl4/code_1 ] # 801100d0
+      - [0x0EB4D0, asm, ovl4/code_1 ] # 801100D0
       - [0x0EBF60, asm, ovl4/code_2 ] # 80110B60
       - [0x0EE220, asm, ovl4/code_3 ] # 80112E20
       - [0x0F1790, asm, ovl4/code_4 ] # 80116390
@@ -577,7 +577,7 @@ segments:
       - [0x101EC0, asm, ovl4/code_22] # 80126AC0
       - [0x102870, asm, ovl4/code_23] # 80127470
       - [0x1031E0, asm, ovl4/code_24] # 80127DE0 
-      - [0x103250, bin] # 80127e50 # 4
+      - [0x103250, bin]               # 80127E50
       
   - name: ovl5
     overlay: True
@@ -586,15 +586,15 @@ segments:
     start: 0x107B40
     vram: 0x80225150
     subsegments:
-      - [0x107B40, asm, ovl5/code_1 ] # 8012C740
-      - [0x107D70, asm, ovl5/code_2 ] # 8012C970
-      - [0x108870, asm, ovl5/code_3 ] # 8012D470
-      - [0x108F60, asm, ovl5/code_4 ] # 8012DB60
-      - [0x1098B0, asm, ovl5/code_5 ] # 8012E4B0
-      - [0x109E40, asm, ovl5/code_6 ] # 8012EA40
-      - [0x10A970, asm, ovl5/code_7 ] # 8012F570
-      - [0x10ADE0, asm, ovl5/code_8 ] # 8012F9E0
-      - [0x10B530, asm, ovl5/code_9 ] # 80130130
+      - [0x107B40, asm, ovl5/code_1]  # 8012C740
+      - [0x107D70, asm, ovl5/code_2]  # 8012C970
+      - [0x108870, asm, ovl5/code_3]  # 8012D470
+      - [0x108F60, asm, ovl5/code_4]  # 8012DB60
+      - [0x1098B0, asm, ovl5/code_5]  # 8012E4B0
+      - [0x109E40, asm, ovl5/code_6]  # 8012EA40
+      - [0x10A970, asm, ovl5/code_7]  # 8012F570
+      - [0x10ADE0, asm, ovl5/code_8]  # 8012F9E0
+      - [0x10B530, asm, ovl5/code_9]  # 80130130
       - [0x10D480, asm, ovl5/code_10] # 80132080
       - [0x10DF20, asm, ovl5/code_11] # 80132B20
       - [0x10EB20, asm, ovl5/code_12] # 80133720
@@ -630,7 +630,7 @@ segments:
       - [0x123E30, asm, ovl5/code_42] # 80148A30
       - [0x124070, asm, ovl5/code_43] # 80148C70
       - [0x1248B0, asm, ovl5/code_44] # 801494B0
-      - [0x124DF0, bin]  # 801499f0 #5
+      - [0x124DF0, bin]               # 801499F0
       
   - name: ovl6
     overlay: True
@@ -639,19 +639,18 @@ segments:
     start: 0x129DC0
     vram: 0x80225150
     subsegments:
-      - [0x129DC0, asm, ovl6/code1] # 8014e9c0
-      - [0x129F90, asm, ovl6/code2]
-      - [0x12A030, asm, ovl6/code3]
-      - [0x12A040, asm, ovl6/code4] # 8014EC40
-      - [0x12C550, asm, ovl6/code5] # 80151150
-      - [0x12C660, asm, ovl6/code6] # 80151260
-      - [0x12CE30, asm, ovl6/code7] # 80151A30
-      - [0x12D950, asm, ovl6/code8] # 80152550
-      - [0x12E000, asm, ovl6/code9] # 80152C00
-      - [0x12E980, asm, ovl6/code10] # 80153580
-      - [0x12F040, asm, ovl6/code11] # 80153C40
-      - [0x12F7A0, asm, ovl6/code12] # 801543A0
-      - [0x12FDD0, bin] # 801549d0 # 6
+      - [0x129DC0, asm, ovl6/code1]  # 8014E9C0
+      - [0x129F90, asm, ovl6/code2]  # 8014EB90
+      - [0x12A030, asm, ovl6/code3]  # 8014EC30
+      - [0x12C550, asm, ovl6/code4]  # 80151150
+      - [0x12C660, asm, ovl6/code5]  # 80151260
+      - [0x12CE30, asm, ovl6/code6]  # 80151A30
+      - [0x12D950, asm, ovl6/code7]  # 80152550
+      - [0x12E000, asm, ovl6/code8]  # 80152C00
+      - [0x12E980, asm, ovl6/code9]  # 80153580
+      - [0x12F040, asm, ovl6/code10] # 80153C40
+      - [0x12F7A0, asm, ovl6/code11] # 801543A0
+      - [0x12FDD0, bin] # 801549D0
       
   - name: ovl7
     overlay: True
@@ -660,15 +659,15 @@ segments:
     start: 0x1315A0
     vram: 0x80225150
     subsegments:    
-      - [0x1315A0, asm, ovl7/code_1 ] # 801561a0
-      - [0x132CC0, asm, ovl7/code_2 ] # 801578C0
-      - [0x134B60, asm, ovl7/code_3 ] # 80159760
-      - [0x135080, asm, ovl7/code_4 ] # 80159C80
-      - [0x135590, asm, ovl7/code_5 ] # 8015A190
-      - [0x1358F0, asm, ovl7/code_6 ] # 8015A4F0
-      - [0x13A940, asm, ovl7/code_7 ] # 8015F540
-      - [0x13B600, asm, ovl7/code_8 ] # 80160200
-      - [0x13B910, asm, ovl7/code_9 ] # 80160510
+      - [0x1315A0, asm, ovl7/code_1]  # 801561A0
+      - [0x132CC0, asm, ovl7/code_2]  # 801578C0
+      - [0x134B60, asm, ovl7/code_3]  # 80159760
+      - [0x135080, asm, ovl7/code_4]  # 80159C80
+      - [0x135590, asm, ovl7/code_5]  # 8015A190
+      - [0x1358F0, asm, ovl7/code_6]  # 8015A4F0
+      - [0x13A940, asm, ovl7/code_7]  # 8015F540
+      - [0x13B600, asm, ovl7/code_8]  # 80160200
+      - [0x13B910, asm, ovl7/code_9]  # 80160510
       - [0x13C890, asm, ovl7/code_10] # 80161490
       - [0x13CCD0, asm, ovl7/code_11] # 801618D0
       - [0x13D1F0, asm, ovl7/code_12] # 80161DF0
@@ -683,7 +682,7 @@ segments:
       - [0x141ED0, asm, ovl7/code_21] # 80166AD0
       - [0x142440, asm, ovl7/code_22] # 80167040
       - [0x142770, asm, ovl7/code_23] # 80167370
-      - [0x142980, bin] # 80167580   # 7
+      - [0x142980, bin]               # 80167580
       
   - name: ovl8
     overlay: True
@@ -692,10 +691,10 @@ segments:
     start: 0x1464F0
     vram: 0x80225150
     subsegments:     
-      - [0x1464F0, asm, ovl8/code_1] # 8016b0f0
+      - [0x1464F0, asm, ovl8/code_1] # 8016B0F0
       - [0x146AA0, asm, ovl8/code_2] # 8016B6A0
       - [0x146C90, asm, ovl8/code_3] # 8016B890
-      - [0x146F00, bin] # 8016bb00 # 8
+      - [0x146F00, bin]              # 8016BB00
       
   - name: ovl9
     overlay: True
@@ -704,15 +703,15 @@ segments:
     start: 0x147330
     vram: 0x80225150
     subsegments:     
-      - [0x147330, asm, ovl9/code_1 ] # 8016bf30
-      - [0x1489F0, asm, ovl9/code_2 ] # 8016D5F0
-      - [0x148FC0, asm, ovl9/code_3 ] # 8016DBC0
-      - [0x14B680, asm, ovl9/code_4 ] # 80170280
-      - [0x14BA00, asm, ovl9/code_5 ] # 80170600
-      - [0x14BE90, asm, ovl9/code_6 ] # 80170A90
-      - [0x14C4A0, asm, ovl9/code_7 ] # 801710A0
-      - [0x14CA00, asm, ovl9/code_8 ] # 80171600
-      - [0x14CEB0, asm, ovl9/code_9 ] # 80171AB0
+      - [0x147330, asm, ovl9/code_1]  # 8016bf30
+      - [0x1489F0, asm, ovl9/code_2]  # 8016D5F0
+      - [0x148FC0, asm, ovl9/code_3]  # 8016DBC0
+      - [0x14B680, asm, ovl9/code_4]  # 80170280
+      - [0x14BA00, asm, ovl9/code_5]  # 80170600
+      - [0x14BE90, asm, ovl9/code_6]  # 80170A90
+      - [0x14C4A0, asm, ovl9/code_7]  # 801710A0
+      - [0x14CA00, asm, ovl9/code_8]  # 80171600
+      - [0x14CEB0, asm, ovl9/code_9]  # 80171AB0
       - [0x14DF80, asm, ovl9/code_10] # 80172B80
       - [0x14E340, asm, ovl9/code_11] # 80172F40
       - [0x14E9A0, asm, ovl9/code_12] # 801735A0
@@ -720,7 +719,7 @@ segments:
       - [0x14F180, asm, ovl9/code_14] # 80173D80
       - [0x14FBA0, asm, ovl9/code_15] # 801747A0
       - [0x150230, asm, ovl9/code_16] # 80174E30
-      - [0x1504C0, bin] # 801750c0 # 9
+      - [0x1504C0, bin]               # 801750C0
        
   - name: ovl10
     overlay: True
@@ -729,15 +728,15 @@ segments:
     start: 0x152E00
     vram: 0x80225150
     subsegments:      
-      - [0x152E00, asm, ovl10/code_1 ] # 80177a00
-      - [0x153BE0, asm, ovl10/code_2 ] # 801787E0
-      - [0x155AC0, asm, ovl10/code_3 ] # 8017A6C0
-      - [0x1580B0, asm, ovl10/code_4 ] # 8017CCB0
-      - [0x1584D0, asm, ovl10/code_5 ] # 8017D0D0
-      - [0x1585E0, asm, ovl10/code_6 ] # 8017D1E0
-      - [0x158A00, asm, ovl10/code_7 ] # 8017D600
-      - [0x15D030, asm, ovl10/code_8 ] # 80181C30
-      - [0x15D350, asm, ovl10/code_9 ] # 80181F50
+      - [0x152E00, asm, ovl10/code_1]  # 80177a00
+      - [0x153BE0, asm, ovl10/code_2]  # 801787E0
+      - [0x155AC0, asm, ovl10/code_3]  # 8017A6C0
+      - [0x1580B0, asm, ovl10/code_4]  # 8017CCB0
+      - [0x1584D0, asm, ovl10/code_5]  # 8017D0D0
+      - [0x1585E0, asm, ovl10/code_6]  # 8017D1E0
+      - [0x158A00, asm, ovl10/code_7]  # 8017D600
+      - [0x15D030, asm, ovl10/code_8]  # 80181C30
+      - [0x15D350, asm, ovl10/code_9]  # 80181F50
       - [0x15D8B0, asm, ovl10/code_10] # 801824B0
       - [0x15E9D0, asm, ovl10/code_11] # 801835D0
       - [0x161090, asm, ovl10/code_12] # 80185C90
@@ -766,7 +765,7 @@ segments:
       - [0x179020, asm, ovl10/code_35] # 8019DC20
       - [0x17A670, asm, ovl10/code_36] # 8019F270
       - [0x17AEB0, asm, ovl10/code_37] # 8019FAB0
-      - [0x17B420, bin] # 801A0020 # 10
+      - [0x17B420, bin]                # 801A0020
       
   - name: ovl11
     overlay: True
@@ -775,21 +774,21 @@ segments:
     start: 0x180FD0
     vram: 0x80225150
     subsegments:    
-      - [0x180FD0, asm, ovl11/code_1 ] # 801a5bd0
-      - [0x1812B0, asm, ovl11/code_2 ] # 801A5EB0
-      - [0x182DC0, asm, ovl11/code_3 ] # 801A79C0
-      - [0x1833A0, asm, ovl11/code_4 ] # 801A7FA0
-      - [0x183710, asm, ovl11/code_5 ] # 801A8310
-      - [0x1837F0, asm, ovl11/code_6 ] # 801A83F0
-      - [0x183960, asm, ovl11/code_7 ] # 801A8560
-      - [0x183BF0, asm, ovl11/code_8 ] # 801A87F0
-      - [0x184250, asm, ovl11/code_9 ] # 801A8E50
+      - [0x180FD0, asm, ovl11/code_1]  # 801a5bd0
+      - [0x1812B0, asm, ovl11/code_2]  # 801A5EB0
+      - [0x182DC0, asm, ovl11/code_3]  # 801A79C0
+      - [0x1833A0, asm, ovl11/code_4]  # 801A7FA0
+      - [0x183710, asm, ovl11/code_5]  # 801A8310
+      - [0x1837F0, asm, ovl11/code_6]  # 801A83F0
+      - [0x183960, asm, ovl11/code_7]  # 801A8560
+      - [0x183BF0, asm, ovl11/code_8]  # 801A87F0
+      - [0x184250, asm, ovl11/code_9]  # 801A8E50
       - [0x184560, asm, ovl11/code_10] # 801A9160
       - [0x184CB0, asm, ovl11/code_11] # 801A98B0
       - [0x184EF0, asm, ovl11/code_12] # 801A9AF0
       - [0x1852B0, asm, ovl11/code_13] # 801A9EB0
       - [0x185670, asm, ovl11/code_14] # 801AA270
-      - [0x185BE0, bin] # 801aa7e0 # 11
+      - [0x185BE0, bin]                # 801AA7E0
   
   - name: ovl12
     overlay: True
@@ -816,7 +815,7 @@ segments:
       - [0x195D90, asm, ovl12/code_16] # 801BA990
       - [0x196710, asm, ovl12/code_17] # 801BB310
       - [0x196C80, asm, ovl12/code_18] # 801BB880
-      - [0x197450, bin] # 12
+      - [0x197450, bin]                # 801BC050
       
   - name: ovl13
     overlay: True
@@ -847,7 +846,7 @@ segments:
       - [0x1ABAC0, asm, ovl13/code_20] # 801D06C0
       - [0x1AC2D0, asm, ovl13/code_21] # 801D0ED0
       - [0x1AC5E0, asm, ovl13/code_22] # 801D11E0
-      - [0x1AC6A0, bin] # 801D12A0  # 13
+      - [0x1AC6A0, bin]                # 801D12A0
     
   - name: ovl14
     overlay: True
@@ -866,7 +865,7 @@ segments:
       - [0x1B8CF0, asm, ovl14/code_8 ] # 801DD8F0
       - [0x1B91A0, asm, ovl14/code_9 ] # 801DDDA0
       - [0x1B93F0, asm, ovl14/code_10] # 801DDFF0
-      - [0x1B99C0, bin] # 801DE5C0 # 14
+      - [0x1B99C0, bin]                # 801DE5C0
     
     
   - name: ovl15
@@ -893,7 +892,7 @@ segments:
       - [0x1C4350, asm, ovl15/code_15] # 801E8F50
       - [0x1C48C0, asm, ovl15/code_16] # 801E94C0
       - [0x1C52E0, asm, ovl15/code_17] # 801E9EE0
-      - [0x1C6320, bin] # 801eaf20 # 15
+      - [0x1C6320, bin]                # 801eaf20
     
   - name: ovl16
     overlay: True
@@ -923,7 +922,7 @@ segments:
       - [0x1D6140, asm, ovl16/code_19] # 801FAD40
       - [0x1D6400, asm, ovl16/code_20] # 801FB000
       - [0x1D6950, asm, ovl16/code_21] # 801FB550
-      - [0x1D69C0, bin] # 801FB5C0 # 16
+      - [0x1D69C0, bin]                # 801FB5C0
     
   - name: ovl17
     overlay: True
@@ -934,7 +933,7 @@ segments:
     subsegments:   
       - [0x1D8B70, asm, ovl17/code_1] # 801fd770
       - [0x1DBF90, asm, ovl17/code_2] # 80200B90
-      - [0x1DCD30, bin] # 80201930 # 17
+      - [0x1DCD30, bin] # 80201930
       
   - name: ovl18
     overlay: True
@@ -943,15 +942,15 @@ segments:
     start: 0x1DE6D0
     vram: 0x80225150
     subsegments:  
-      - [0x1DE6D0, asm, ovl18/code_1 ] # 802032d0
-      - [0x1DF0A0, asm, ovl18/code_2 ] # 80203CA0
-      - [0x1DF4B0, asm, ovl18/code_3 ] # 802040B0
-      - [0x1E0380, asm, ovl18/code_4 ] # 80204F80
-      - [0x1E2A40, asm, ovl18/code_5 ] # 80207640
-      - [0x1E3050, asm, ovl18/code_6 ] # 80207C50
-      - [0x1E3D70, asm, ovl18/code_7 ] # 80208970
-      - [0x1E5280, asm, ovl18/code_8 ] # 80209E80
-      - [0x1E5EA0, asm, ovl18/code_9 ] # 8020AAA0
+      - [0x1DE6D0, asm, ovl18/code_1]  # 802032d0
+      - [0x1DF0A0, asm, ovl18/code_2]  # 80203CA0
+      - [0x1DF4B0, asm, ovl18/code_3]  # 802040B0
+      - [0x1E0380, asm, ovl18/code_4]  # 80204F80
+      - [0x1E2A40, asm, ovl18/code_5]  # 80207640
+      - [0x1E3050, asm, ovl18/code_6]  # 80207C50
+      - [0x1E3D70, asm, ovl18/code_7]  # 80208970
+      - [0x1E5280, asm, ovl18/code_8]  # 80209E80
+      - [0x1E5EA0, asm, ovl18/code_9]  # 8020AAA0
       - [0x1E71E0, asm, ovl18/code_10] # 8020BDE0
       - [0x1E7C90, asm, ovl18/code_11] # 8020C890
       - [0x1E84B0, asm, ovl18/code_12] # 8020D0B0
@@ -961,7 +960,7 @@ segments:
       - [0x1EA680, asm, ovl18/code_16] # 8020F280
       - [0x1EB070, asm, ovl18/code_17] # 8020FC70
       - [0x1EB8B0, asm, ovl18/code_18] # 802104B0
-      - [0x1EBD80, bin] # 80210980 # 18
+      - [0x1EBD80, bin]                # 80210980
     
     
   - name: ovl19
@@ -982,7 +981,7 @@ segments:
       - [0x1F5830, asm, ovl19/code_9 ] # 8021A430
       - [0x1F5AD0, asm, ovl19/code_10] # 8021A6D0
       - [0x1F60A0, asm, ovl19/code_11] # 8021ACA0
-      - [0x1F6360, bin] # 8021af60 # 19
+      - [0x1F6360, bin]                # 8021af60
     
   - name: ovl20
     overlay: True
@@ -1000,7 +999,7 @@ segments:
       - [0x1FB010, asm, ovl20/code_7] # 8021FC10
       - [0x1FBD30, asm, ovl20/code_8] # 80220930
       - [0x1FD070, asm, ovl20/code_9] # 80221C70
-      - [0x1FD6B0, bin] # 802222B0 # 20
+      - [0x1FD6B0, bin]               # 802222B0
   
   - name: ovl21
     overlay: True
@@ -1009,15 +1008,15 @@ segments:
     start: 0x1FEDF0
     vram: 0x80225150
     subsegments:   
-      - [0x1FEDF0, asm, ovl21/code_1 ] # 802239f0
-      - [0x1FF600, asm, ovl21/code_2 ] # 80224200
-      - [0x200630, asm, ovl21/code_3 ] # 80225230
-      - [0x200800, asm, ovl21/code_4 ] # 80225400
-      - [0x2014B0, asm, ovl21/code_5 ] # 802260B0
-      - [0x201D70, asm, ovl21/code_6 ] # 80226970
-      - [0x202CE0, asm, ovl21/code_7 ] # 802278E0
-      - [0x203190, asm, ovl21/code_8 ] # 80227D90
-      - [0x203710, asm, ovl21/code_9 ] # 80228310
+      - [0x1FEDF0, asm, ovl21/code_1]  # 802239f0
+      - [0x1FF600, asm, ovl21/code_2]  # 80224200
+      - [0x200630, asm, ovl21/code_3]  # 80225230
+      - [0x200800, asm, ovl21/code_4]  # 80225400
+      - [0x2014B0, asm, ovl21/code_5]  # 802260B0
+      - [0x201D70, asm, ovl21/code_6]  # 80226970
+      - [0x202CE0, asm, ovl21/code_7]  # 802278E0
+      - [0x203190, asm, ovl21/code_8]  # 80227D90
+      - [0x203710, asm, ovl21/code_9]  # 80228310
       - [0x203B30, asm, ovl21/code_10] # 80228730
       - [0x204490, asm, ovl21/code_11] # 80229090
       - [0x206190, asm, ovl21/code_12] # 8022AD90
@@ -1036,7 +1035,7 @@ segments:
       - [0x212500, asm, ovl21/code_25] # 80237100
       - [0x212A40, asm, ovl21/code_26] # 80237640
       - [0x212BA0, asm, ovl21/code_27] # 802377A0
-      - [0x212C10, bin] # 80237810 # 21
+      - [0x212C10, bin]                # 80237810
     
   - name: ovl22
     overlay: True
@@ -1045,15 +1044,15 @@ segments:
     start: 0x2168C0
     vram: 0x80225150
     subsegments:   
-      - [0x2168C0, asm, ovl22/code_1 ] # 8023b4c0
-      - [0x2177A0, asm, ovl22/code_2 ] # 8023C3A0
-      - [0x218100, asm, ovl22/code_3 ] # 8023CD00
-      - [0x21A040, asm, ovl22/code_4 ] # 8023EC40
-      - [0x21A6A0, asm, ovl22/code_5 ] # 8023F2A0
-      - [0x21B010, asm, ovl22/code_6 ] # 8023FC10
-      - [0x21B4C0, asm, ovl22/code_7 ] # 802400C0
-      - [0x21BA40, asm, ovl22/code_8 ] # 80240640
-      - [0x21BE60, asm, ovl22/code_9 ] # 80240A60
+      - [0x2168C0, asm, ovl22/code_1]  # 8023b4c0
+      - [0x2177A0, asm, ovl22/code_2]  # 8023C3A0
+      - [0x218100, asm, ovl22/code_3]  # 8023CD00
+      - [0x21A040, asm, ovl22/code_4]  # 8023EC40
+      - [0x21A6A0, asm, ovl22/code_5]  # 8023F2A0
+      - [0x21B010, asm, ovl22/code_6]  # 8023FC10
+      - [0x21B4C0, asm, ovl22/code_7]  # 802400C0
+      - [0x21BA40, asm, ovl22/code_8]  # 80240640
+      - [0x21BE60, asm, ovl22/code_9]  # 80240A60
       - [0x21C450, asm, ovl22/code_10] # 80241050
       - [0x21F010, asm, ovl22/code_11] # 80243C10
       - [0x221630, asm, ovl22/code_12] # 80246230
@@ -1068,7 +1067,7 @@ segments:
       - [0x227E30, asm, ovl22/code_21] # 8024CA30
       - [0x2280F0, asm, ovl22/code_22] # 8024CCF0
       - [0x228A00, asm, ovl22/code_23] # 8024D600
-      - [0x228A70, bin] # 8024D670 # 22
+      - [0x228A70, bin]                # 8024D670
       
   - name: ovl23
     overlay: True
@@ -1083,7 +1082,7 @@ segments:
       - [0x22D540, asm, ovl23/code_4] # 80252140
       - [0x22D680, asm, ovl23/code_5] # 80252280
       - [0x22D830, asm, ovl23/code_6] # 80252430
-      - [0x22DDA0, bin] # 802529A0 DATA? # 23
+      - [0x22DDA0, bin]               # 802529A0
       
   - name: ovl24
     overlay: True
@@ -1098,7 +1097,7 @@ segments:
       - [0x230920, asm, ovl24/code_4] # 80255520
       - [0x230AA0, asm, ovl24/code_5] # 802556A0
       - [0x231420, asm, ovl24/code_6] # 80256020
-      - [0x231A50, bin,] # 24
+      - [0x231A50, bin]               # 80256650
   
   - name: ovl25
     overlay: True
@@ -1107,15 +1106,15 @@ segments:
     start: 0x232840
     vram: 0x80225150
     subsegments:  
-      - [0x232840, asm, ovl25/code_1 ] # 80257440
-      - [0x232A30, asm, ovl25/code_2 ] # 80257630
-      - [0x232B40, asm, ovl25/code_3 ] # 80257740
-      - [0x232C20, asm, ovl25/code_4 ] # 80257820
-      - [0x233140, asm, ovl25/code_5 ] # 80257D40
-      - [0x2334B0, asm, ovl25/code_6 ] # 802580B0
-      - [0x233A60, asm, ovl25/code_7 ] # 80258660
-      - [0x233AE0, asm, ovl25/code_8 ] # 802586E0
-      - [0x234B60, asm, ovl25/code_9 ] # 80259760
+      - [0x232840, asm, ovl25/code_1]  # 80257440
+      - [0x232A30, asm, ovl25/code_2]  # 80257630
+      - [0x232B40, asm, ovl25/code_3]  # 80257740
+      - [0x232C20, asm, ovl25/code_4]  # 80257820
+      - [0x233140, asm, ovl25/code_5]  # 80257D40
+      - [0x2334B0, asm, ovl25/code_6]  # 802580B0
+      - [0x233A60, asm, ovl25/code_7]  # 80258660
+      - [0x233AE0, asm, ovl25/code_8]  # 802586E0
+      - [0x234B60, asm, ovl25/code_9]  # 80259760
       - [0x234F90, asm, ovl25/code_10] # 80259B90
       - [0x2350B0, asm, ovl25/code_11] # 80259CB0
       - [0x236BF0, asm, ovl25/code_12] # 8025B7F0
@@ -1144,7 +1143,7 @@ segments:
       - [0x245830, asm, ovl25/code_35] # 8026A430
       - [0x2482E0, asm, ovl25/code_36] # 8026CEE0
       - [0x249140, asm, ovl25/code_37] # 8026DD40
-      - [0x24AAD0, bin] # 8026F6D0 # 25
+      - [0x24AAD0, bin]                # 8026F6D0
  
   - name: ovl26
     overlay: True
@@ -1159,7 +1158,7 @@ segments:
       - [0x24EFA0, asm, ovl26/code_4] # 80273BA0
       - [0x250F10, asm, ovl26/code_5] # 80275B10
       - [0x2510D0, asm, ovl26/code_6] # 80275CD0
-      - [0x251270, bin] # 80275E70 # 26
+      - [0x251270, bin]               # 80275E70
  
   - name: ovl27
     overlay: True
@@ -1168,15 +1167,15 @@ segments:
     start: 0x252170
     vram: 0x80225150
     subsegments:        
-      - [0x252170, asm, ovl27/code_1 ] # 80276d70
-      - [0x2529D0, asm, ovl27/code_2 ] # 802775D0
-      - [0x255090, asm, ovl27/code_3 ] # 80279C90
-      - [0x256710, asm, ovl27/code_4 ] # 8027B310
-      - [0x2569C0, asm, ovl27/code_5 ] # 8027B5C0
-      - [0x258680, asm, ovl27/code_6 ] # 8027D280
-      - [0x25AB70, asm, ovl27/code_7 ] # 8027F770
-      - [0x25BDC0, asm, ovl27/code_8 ] # 802809C0
-      - [0x25C440, asm, ovl27/code_9 ] # 80281040
+      - [0x252170, asm, ovl27/code_1]  # 80276d70
+      - [0x2529D0, asm, ovl27/code_2]  # 802775D0
+      - [0x255090, asm, ovl27/code_3]  # 80279C90
+      - [0x256710, asm, ovl27/code_4]  # 8027B310
+      - [0x2569C0, asm, ovl27/code_5]  # 8027B5C0
+      - [0x258680, asm, ovl27/code_6]  # 8027D280
+      - [0x25AB70, asm, ovl27/code_7]  # 8027F770
+      - [0x25BDC0, asm, ovl27/code_8]  # 802809C0
+      - [0x25C440, asm, ovl27/code_9]  # 80281040
       - [0x25D1E0, asm, ovl27/code_10] # 80281DE0
       - [0x25DC00, asm, ovl27/code_11] # 80282800
       - [0x25E5B0, asm, ovl27/code_12] # 802831B0
@@ -1189,7 +1188,7 @@ segments:
       - [0x2639F0, asm, ovl27/code_19] # 802885F0
       - [0x263E00, asm, ovl27/code_20] # 80288A00
       - [0x264240, asm, ovl27/code_21] # 80288E40
-      - [0x265180, bin] # 80289d80 # 27
+      - [0x265180, bin]                # 80289d80
     
   - name: ovl28
     overlay: True
@@ -1198,15 +1197,15 @@ segments:
     start: 0x269870
     vram: 0x80225150
     subsegments:    
-      - [0x269870, asm, ovl28/code_1 ] # 8028E470
-      - [0x269F40, asm, ovl28/code_2 ] # 8028EB40
-      - [0x26B400, asm, ovl28/code_3 ] # 80290000
-      - [0x26CA30, asm, ovl28/code_4 ] # 80291630
-      - [0x270170, asm, ovl28/code_5 ] # 80294D70
-      - [0x274710, asm, ovl28/code_6 ] # 80299310
-      - [0x275EB0, asm, ovl28/code_7 ] # 8029AAB0
-      - [0x276C80, asm, ovl28/code_8 ] # 8029B880
-      - [0x2781F0, asm, ovl28/code_9 ] # 8029CDF0
+      - [0x269870, asm, ovl28/code_1]  # 8028E470
+      - [0x269F40, asm, ovl28/code_2]  # 8028EB40
+      - [0x26B400, asm, ovl28/code_3]  # 80290000
+      - [0x26CA30, asm, ovl28/code_4]  # 80291630
+      - [0x270170, asm, ovl28/code_5]  # 80294D70
+      - [0x274710, asm, ovl28/code_6]  # 80299310
+      - [0x275EB0, asm, ovl28/code_7]  # 8029AAB0
+      - [0x276C80, asm, ovl28/code_8]  # 8029B880
+      - [0x2781F0, asm, ovl28/code_9]  # 8029CDF0
       - [0x2783E0, asm, ovl28/code_10] # 8029CFE0
       - [0x27A7A0, asm, ovl28/code_11] # 8029F3A0
       - [0x27B260, asm, ovl28/code_12] # 8029FE60
@@ -1240,7 +1239,7 @@ segments:
       - [0x290E90, asm, ovl28/code_40] # 802B5A90
       - [0x291C40, asm, ovl28/code_41] # 802B6840
       - [0x292560, asm, ovl28/code_42] # 802B7160
-      - [0x2925D0, bin] # 28
+      - [0x2925D0, bin]                # 802B71D0
     
   - name: ovl29
     overlay: True
@@ -1249,15 +1248,15 @@ segments:
     start: 0x29AAB0
     vram: 0x80225150
     subsegments:       
-      - [0x29AAB0, asm, ovl29/code_1 ] # 802bf6b0
-      - [0x29AD30, asm, ovl29/code_2 ] # 802BF930
-      - [0x29B8F0, asm, ovl29/code_3 ] # 802C04F0
-      - [0x29C6A0, asm, ovl29/code_4 ] # 802C12A0
-      - [0x29CAC0, asm, ovl29/code_5 ] # 802C16C0
-      - [0x29F180, asm, ovl29/code_6 ] # 802C3D80
-      - [0x29F350, asm, ovl29/code_7 ] # 802C3F50
-      - [0x2A0220, asm, ovl29/code_8 ] # 802C4E20
-      - [0x2A0380, asm, ovl29/code_9 ] # 802C4F80
+      - [0x29AAB0, asm, ovl29/code_1]  # 802bf6b0
+      - [0x29AD30, asm, ovl29/code_2]  # 802BF930
+      - [0x29B8F0, asm, ovl29/code_3]  # 802C04F0
+      - [0x29C6A0, asm, ovl29/code_4]  # 802C12A0
+      - [0x29CAC0, asm, ovl29/code_5]  # 802C16C0
+      - [0x29F180, asm, ovl29/code_6]  # 802C3D80
+      - [0x29F350, asm, ovl29/code_7]  # 802C3F50
+      - [0x2A0220, asm, ovl29/code_8]  # 802C4E20
+      - [0x2A0380, asm, ovl29/code_9]  # 802C4F80
       - [0x2A06A0, asm, ovl29/code_10] # 802C52A0
       - [0x2A0D80, asm, ovl29/code_11] # 802C5980
       - [0x2A1150, asm, ovl29/code_12] # 802C5D50
@@ -1269,7 +1268,7 @@ segments:
       - [0x2A4460, asm, ovl29/code_18] # 802C9060
       - [0x2A4790, asm, ovl29/code_19] # 802C9390
       - [0x2A49A0, asm, ovl29/code_20] # 802C95A0
-      - [0x2A4B00, bin] # 802C9700 # 29
+      - [0x2A4B00, bin]                # 802C9700
       
   - name: ovl30
     overlay: True
@@ -1282,7 +1281,7 @@ segments:
       - [0x2A77E0, asm, ovl30/code_2] # 802CC3E0
       - [0x2A9EA0, asm, ovl30/code_3] # 802CEAA0
       - [0x2AA4F0, asm, ovl30/code_4] # 802CF0F0
-      - [0x2AA660, bin] # 802CF260 # 30
+      - [0x2AA660, bin]               # 802CF260
       
   - name: ovl31
     overlay: True
@@ -1291,15 +1290,15 @@ segments:
     start: 0x2AB510
     vram: 0x80225150
     subsegments:        
-      - [0x2AB510, asm, ovl31/code_1 ] # 802d0110
-      - [0x2AB920, asm, ovl31/code_2 ] # 802D0520
-      - [0x2ADE30, asm, ovl31/code_3 ] # 802D2A30
-      - [0x2B00F0, asm, ovl31/code_4 ] # 802D4CF0
-      - [0x2B2B90, asm, ovl31/code_5 ] # 802D7790
-      - [0x2B51B0, asm, ovl31/code_6 ] # 802D9DB0
-      - [0x2B5BD0, asm, ovl31/code_7 ] # 802DA7D0
-      - [0x2B97C0, asm, ovl31/code_8 ] # 802DE3C0
-      - [0x2BA5B0, asm, ovl31/code_9 ] # 802DF1B0
+      - [0x2AB510, asm, ovl31/code_1]  # 802d0110
+      - [0x2AB920, asm, ovl31/code_2]  # 802D0520
+      - [0x2ADE30, asm, ovl31/code_3]  # 802D2A30
+      - [0x2B00F0, asm, ovl31/code_4]  # 802D4CF0
+      - [0x2B2B90, asm, ovl31/code_5]  # 802D7790
+      - [0x2B51B0, asm, ovl31/code_6]  # 802D9DB0
+      - [0x2B5BD0, asm, ovl31/code_7]  # 802DA7D0
+      - [0x2B97C0, asm, ovl31/code_8]  # 802DE3C0
+      - [0x2BA5B0, asm, ovl31/code_9]  # 802DF1B0
       - [0x2BAF10, asm, ovl31/code_10] # 802DFB10
       - [0x2BB310, asm, ovl31/code_11] # 802DFF10
       - [0x2BBD40, asm, ovl31/code_12] # 802E0940
@@ -1307,7 +1306,7 @@ segments:
       - [0x2BC760, asm, ovl31/code_14] # 802E1360
       - [0x2BCB40, asm, ovl31/code_15] # 802E1740
       - [0x2BCBB0, asm, ovl31/code_16] # 802E17B0
-      - [0x2BD890, bin] # 802E2490 # 31
+      - [0x2BD890, bin]                # 802E2490
       
   - name: ovl32
     overlay: True
@@ -1324,10 +1323,8 @@ segments:
       - [0x2C1000, asm, ovl32/code_6] # 802E5C00
       - [0x2C21A0, asm, ovl32/code_7] # 802E6DA0
       - [0x2C2710, asm, ovl32/code_8] # 802E7310
-      - [0x2C2D40, bin] # 802E7940
-    
-    
-    ## VRAM start may be incorrect
+      - [0x2C2D40, bin]               # 802E7940
+
   - name: ovl33
     overlay: True
     type: code
@@ -1336,8 +1333,8 @@ segments:
     vram: 0x802584C0
     subsegments:    
       - [0x2C4CC0, asm, ovl33/code_1] # 802E98C0
-      - [0x2C5420, bin] # 802ea020 # 33
-      
+      - [0x2C5420, bin]               # 802ea020
+
   - name: ovl33_1
     overlay: True
     type: code
@@ -1345,9 +1342,9 @@ segments:
     start: 0x2C5440
     vram: 0x802584C0
     subsegments: 
-      - [0x2C5440, asm, ovl33_1/code_1]
-      - [0x2C59B0, bin]
- 
+      - [0x2C5440, asm, ovl33_1/code_1] # 802EA040
+      - [0x2C59B0, bin]                 # 802EA5B0
+
   - name: ovl34
     overlay: True
     type: code
@@ -1355,8 +1352,8 @@ segments:
     start: 0x2C59E0
     vram: 0x802584C0
     subsegments:     
-      - [0x2C59E0, asm, ovl34/code_1] # 802EA5e0
-      - [0x2C5D80, bin]  # 34
+      - [0x2C59E0, asm, ovl34/code_1] # 802EA5E0
+      - [0x2C5D80, bin]               # 802EA980
       
       
   - name: ovl34_1
@@ -1366,8 +1363,8 @@ segments:
     start: 0x2C5D90
     vram: 0x802584C0
     subsegments:       
-      - [0x2C5D90, asm, ovl34_1/code_1]
-      - [0x2C69A0, bin] # 802eb5a0
+      - [0x2C5D90, asm, ovl34_1/code_1] # 802EA990
+      - [0x2C69A0, bin]                 # 802EB5A0
  
   - name: ovl35
     overlay: True
@@ -1376,8 +1373,8 @@ segments:
     start: 0x2C69F0
     vram: 0x802584C0
     subsegments:    
-      - [0x2C69F0, asm, ovl35/code_1] # 802eb5f0
-      - [0x2C71C0, bin] # 802ebdc0 # 35
+      - [0x2C69F0, asm, ovl35/code_1] # 802EB5F0
+      - [0x2C71C0, bin]               # 802EBDC0 
  
   - name: ovl36
     overlay: True
@@ -1386,8 +1383,8 @@ segments:
     start: 0x2C7210
     vram: 0x802584C0
     subsegments:   
-      - [0x2C7210, asm, ovl36/code_1] # 802ebe10
-      - [0x2C75D0, bin] #802EC1D0 # 36
+      - [0x2C7210, asm, ovl36/code_1] # 802EBE10
+      - [0x2C75D0, bin]               # 802EC1D0
   
   - name: ovl37
     overlay: True
@@ -1397,7 +1394,7 @@ segments:
     vram: 0x802584C0
     subsegments:    
       - [0x2C75F0, asm, ovl37/code_1] # 802ec1f0
-      - [0x2C7DD0, bin] # 802EC9D0 # 37
+      - [0x2C7DD0, bin]               # 802EC9D0
       
   - name: ovl38
     overlay: True
@@ -1407,7 +1404,7 @@ segments:
     vram: 0x802584C0
     subsegments:        
       - [0x2C7E40, asm, ovl38/code_1] # 802ECA40
-      - [0x2C8B60, bin] #802ED760 # 38
+      - [0x2C8B60, bin]               # 802ED760
       
   - name: ovl39
     overlay: True
@@ -1417,7 +1414,7 @@ segments:
     vram: 0x802584C0
     subsegments:            
       - [0x2C8C60, asm, ovl39/code_1] # 802ED860
-      - [0x2C92C0, bin] # 802EDEC0 # 39
+      - [0x2C92C0, bin]               # 802EDEC0
       
   - name: ovl40
     overlay: True
@@ -1426,8 +1423,8 @@ segments:
     start: 0x2C9320
     vram: 0x802584C0
     subsegments:        
-      - [0x2C9320, asm, ovl40/code_1] # 802edf20
-      - [0x2C9A20, bin] # 802EE620 # 40
+      - [0x2C9320, asm, ovl40/code_1] # 802EDF20
+      - [0x2C9A20, bin]               # 802EE620
       
   - name: ovl41
     overlay: True
@@ -1437,7 +1434,7 @@ segments:
     vram: 0x802584C0
     subsegments:       
       - [0x2C9A50, asm, ovl41/code_1] #802EE650
-      - [0x2CA1F0, bin] #802EEDF0 # 41
+      - [0x2CA1F0, bin]               #802EEDF0
       
   - name: ovl42
     overlay: True
@@ -1447,12 +1444,12 @@ segments:
     vram: 0x802584C0
     subsegments:       
       - [0x2CA270, asm, ovl42/code_1] # 802EEEA0
-      - [0x2CABF0, bin] #802ef7f0
+      - [0x2CABF0, bin]               # 802EF7F0
 
   - name: bin2
     type: bin
     start: 0x2CAC60
     vram: 0x802ef860
     subsegments:
-      - [0x2CAC60, bin]
+      - [0x2CAC60, bin]               # 802EF860
   - [0x2000000]
