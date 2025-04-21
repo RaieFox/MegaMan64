@@ -95,7 +95,7 @@ segments:
     #  - [0x27900, asm, codeseg1/code_34] # Merge for RODATA AD210
     #  - [0x2B4C0, asm, codeseg1/code_35] # Merge for RODATA AD210
     #  - [0x2CEF0, asm, codeseg1/code_36] # Merge for RODATA AD210
-      - [0x30550, asm, codeseg1/code_37] 
+      - [0x30550, asm, codeseg1/code_37] #Buster Code?
     #  - [0x30C10, asm, codeseg1/code_37_1]
     #  - [0x33EF0, asm, codeseg1/code_38]
     #  - [0x34720, asm, codeseg1/code_39]
@@ -469,6 +469,7 @@ segments:
     exclusive_ram_id: overlay2
     start: 0xB6040
     vram: 0x80225150
+    #size: 0x1AF10
     subsegments:
       - [0xB6040, asm, ovl2/code_1]  # 800DAC40
       - [0xB6F20, asm, ovl2/code_2]  # 800DBB20
@@ -477,7 +478,7 @@ segments:
       - [0xBB620, asm, ovl2/code_5]  # 800E0220
       - [0xBBB40, asm, ovl2/code_6]  # 800E0740
       - [0xBC820, asm, ovl2/code_7]  # 800E1420
-      - [0xBF340, asm, ovl2/code_8]  # 800E3F40
+      - [0xBF340, asm, ovl2/code_8]  # 800E3F40 #Ceiling Reaverbot?
       - [0xC0FD0, asm, ovl2/code_9]  # 800E5BD0
       - [0xC2B10, asm, ovl2/code_10] # 800E7710
       - [0xC30D0, asm, ovl2/code_11] # 800E7CD0
@@ -545,7 +546,7 @@ segments:
       - [0xE71D0, asm, ovl3/code_30] # 8010BDD0
       - [0xE7AC0, bin]               # 8010C6C0
       
-  - name: ovl4
+  - name: ovl4 #Underground Ruins
     overlay: True
     dir: overlays
     overlay: True
@@ -557,7 +558,7 @@ segments:
     vram: 0x80225150
     subsegments:
       - [0x0EB4D0, asm, ovl4/code_1 ] # 801100D0
-      - [0x0EBF60, asm, ovl4/code_2 ] # 80110B60
+      - [0x0EBF60, asm, ovl4/code_2 ] # 80110B60 Arukoitan
       - [0x0EE220, asm, ovl4/code_3 ] # 80112E20
       - [0x0F1790, asm, ovl4/code_4 ] # 80116390
       - [0x0F2350, asm, ovl4/code_5 ] # 80116F50
@@ -673,6 +674,7 @@ segments:
     exclusive_ram_id: overlay2
     start: 0x1315A0
     vram: 0x80225150
+    #size: 0x14F50
     subsegments:    
       - [0x1315A0, asm, ovl7/code_1]  # 801561A0
       - [0x132CC0, asm, ovl7/code_2]  # 801578C0
@@ -699,7 +701,7 @@ segments:
       - [0x142770, asm, ovl7/code_23] # 80167370
       - [0x142980, bin]               # 80167580
       
-  - name: ovl8 # Opening Cutscene?
+  - name: ovl_intro
     overlay: True
     dir: overlays
     overlay: True
@@ -709,13 +711,14 @@ segments:
     exclusive_ram_id: overlay2
     start: 0x1464F0
     vram: 0x80225150
+    #size: 0xE40
     subsegments:     
       - [0x1464F0, asm, ovl8/code_1] # 8016B0F0
       - [0x146AA0, asm, ovl8/code_2] # 8016B6A0
       - [0x146C90, asm, ovl8/code_3] # 8016B890
       - [0x146F00, bin]              # 8016BB00
       
-  - name: ovl9 #Marketplace?
+  - name: ovl_market
     overlay: True
     dir: overlays
     overlay: True
@@ -725,6 +728,7 @@ segments:
     exclusive_ram_id: overlay2
     start: 0x147330
     vram: 0x80225150
+    #length: 0xBAD0
     subsegments:     
       - [0x147330, asm, ovl9/code_1]  # 8016bf30
       - [0x1489F0, asm, ovl9/code_2]  # 8016D5F0
@@ -1450,11 +1454,12 @@ segments:
     exclusive_ram_id: overlay3
     start: 0x2C4CC0
     vram: 0x802584C0
+    size: 0x780
     subsegments:    
       - [0x2C4CC0, asm, ovl33/code_1] # 802E98C0
       - [0x2C5420, bin]               # 802ea020
 
-  - name: ovl33_1
+  - name: ovl34
     overlay: True
     dir: overlays
     overlay: True
@@ -1468,7 +1473,7 @@ segments:
       - [0x2C5440, asm, ovl33_1/code_1] # 802EA040
       - [0x2C59B0, bin]                 # 802EA5B0
 
-  - name: ovl34
+  - name: ovl35
     overlay: True
     dir: overlays
     overlay: True
@@ -1478,12 +1483,13 @@ segments:
     exclusive_ram_id: overlay3
     start: 0x2C59E0
     vram: 0x802584C0
+    #size: 0x3B0
     subsegments:     
       - [0x2C59E0, asm, ovl34/code_1] # 802EA5E0
       - [0x2C5D80, bin]               # 802EA980
       
       
-  - name: ovl34_1
+  - name: ovl36
     overlay: True
     dir: overlays
     overlay: True
@@ -1493,11 +1499,12 @@ segments:
     exclusive_ram_id: overlay3
     start: 0x2C5D90
     vram: 0x802584C0
+    #size: 0xC60
     subsegments:       
       - [0x2C5D90, asm, ovl34_1/code_1] # 802EA990
       - [0x2C69A0, bin]                 # 802EB5A0
  
-  - name: ovl35
+  - name: ovl37
     overlay: True
     dir: overlays
     overlay: True
@@ -1507,11 +1514,12 @@ segments:
     exclusive_ram_id: overlay3
     start: 0x2C69F0
     vram: 0x802584C0
+    #size: 0x820
     subsegments:    
       - [0x2C69F0, asm, ovl35/code_1] # 802EB5F0
       - [0x2C71C0, bin]               # 802EBDC0 
  
-  - name: ovl36
+  - name: ovl38
     overlay: True
     dir: overlays
     overlay: True
@@ -1521,11 +1529,12 @@ segments:
     exclusive_ram_id: overlay3
     start: 0x2C7210
     vram: 0x802584C0
+    #size: 0x3E0
     subsegments:   
       - [0x2C7210, asm, ovl36/code_1] # 802EBE10
       - [0x2C75D0, bin]               # 802EC1D0
   
-  - name: ovl37
+  - name: ovl39
     overlay: True
     dir: overlays
     overlay: True
@@ -1535,37 +1544,10 @@ segments:
     exclusive_ram_id: overlay3
     start: 0x2C75F0
     vram: 0x802584C0
+    #size: 0x850
     subsegments:    
       - [0x2C75F0, asm, ovl37/code_1] # 802ec1f0
       - [0x2C7DD0, bin]               # 802EC9D0
-      
-  - name: ovl38
-    overlay: True
-    dir: overlays
-    overlay: True
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
-    type: code
-    exclusive_ram_id: overlay3
-    start: 0x2C7E40
-    vram: 0x802584C0
-    subsegments:        
-      - [0x2C7E40, asm, ovl38/code_1] # 802ECA40
-      - [0x2C8B60, bin]               # 802ED760
-      
-  - name: ovl39
-    overlay: True
-    dir: overlays
-    overlay: True
-    symbol_name_format: $VRAM_$SEG
-    symbol_name_format_no_rom: $VRAM_$SEG
-    type: code
-    exclusive_ram_id: overlay3
-    start: 0x2C8C60
-    vram: 0x802584C0
-    subsegments:            
-      - [0x2C8C60, asm, ovl39/code_1] # 802ED860
-      - [0x2C92C0, bin]               # 802EDEC0
       
   - name: ovl40
     overlay: True
@@ -1575,11 +1557,12 @@ segments:
     symbol_name_format_no_rom: $VRAM_$SEG
     type: code
     exclusive_ram_id: overlay3
-    start: 0x2C9320
+    start: 0x2C7E40
     vram: 0x802584C0
+    #size: 0xE20
     subsegments:        
-      - [0x2C9320, asm, ovl40/code_1] # 802EDF20
-      - [0x2C9A20, bin]               # 802EE620
+      - [0x2C7E40, asm, ovl38/code_1] # 802ECA40
+      - [0x2C8B60, bin]               # 802ED760
       
   - name: ovl41
     overlay: True
@@ -1589,11 +1572,12 @@ segments:
     symbol_name_format_no_rom: $VRAM_$SEG
     type: code
     exclusive_ram_id: overlay3
-    start: 0x2C9A50
+    start: 0x2C8C60
     vram: 0x802584C0
-    subsegments:       
-      - [0x2C9A50, asm, ovl41/code_1] #802EE650
-      - [0x2CA1F0, bin]               #802EEDF0
+    #size: 0x6C0
+    subsegments:            
+      - [0x2C8C60, asm, ovl39/code_1] # 802ED860
+      - [0x2C92C0, bin]               # 802EDEC0
       
   - name: ovl42
     overlay: True
@@ -1603,8 +1587,39 @@ segments:
     symbol_name_format_no_rom: $VRAM_$SEG
     type: code
     exclusive_ram_id: overlay3
+    start: 0x2C9320
+    vram: 0x802584C0
+    #size: 0x730
+    subsegments:        
+      - [0x2C9320, asm, ovl40/code_1] # 802EDF20
+      - [0x2C9A20, bin]               # 802EE620
+      
+  - name: ovl43
+    overlay: True
+    dir: overlays
+    overlay: True
+    symbol_name_format: $VRAM_$SEG
+    symbol_name_format_no_rom: $VRAM_$SEG
+    type: code
+    exclusive_ram_id: overlay3
+    start: 0x2C9A50
+    vram: 0x802584C0
+    #size: 0x820
+    subsegments:       
+      - [0x2C9A50, asm, ovl41/code_1] #802EE650
+      - [0x2CA1F0, bin]               #802EEDF0
+      
+  - name: ovl44
+    overlay: True
+    dir: overlays
+    overlay: True
+    symbol_name_format: $VRAM_$SEG
+    symbol_name_format_no_rom: $VRAM_$SEG
+    type: code
+    exclusive_ram_id: overlay3
     start: 0x2CA270
     vram: 0x802584C0
+    #size: 0x9F0
     subsegments:       
       - [0x2CA270, asm, ovl42/code_1] # 802EEEA0
       - [0x2CABF0, bin]               # 802EF7F0
